@@ -15,28 +15,16 @@ Ce projet contient seulement 3 classes qui intéragissent entre elle :
 
 ## Installation
 
-### Docker
-
-Vous pouvez utilisez Docker pour faire fonctionner ce projet
-
 ```sh
-docker compose up
-```
-
-Sinon il suffit de lancer l'installation des packages via composer :
-
-```sh
-composer install
+docker compose run --rm php composer install
 ```
 
 ## Script
 
-Si vous utilisez Docker ces commandes sont à lancer depuis le container ou avec le prefix `docker compose exec php`
-
 ### Run test with [PHPUnit](https://phpunit.de/)
 
 ```sh
-composer test
+docker compose run --rm php composer test
 ```
 
 utilise la configuration disponible dans le fichier `phpunit.xml`
@@ -44,7 +32,7 @@ utilise la configuration disponible dans le fichier `phpunit.xml`
 ### Run test and coverage
 
 ```sh
-composer test:coverage
+docker compose run --rm php composer test:coverage
 ```
 
 édite un rapport au format HTML dans le dossier `coverage`
@@ -52,17 +40,17 @@ composer test:coverage
 ### Linter
 
 ```sh
-composer phpcs
+docker compose run --rm php composer phpcs
 ```
 
 ```sh
-composer phpcs:fix
+docker compose run --rm php composer phpcs:fix
 ```
 
 ### PHPStan
 
 ```sh
-composer phpstan
+docker compose run --rm php composer phpstan
 ```
 
 ## Structure du projet
